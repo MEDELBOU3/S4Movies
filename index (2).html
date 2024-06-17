@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SM.Movies</title>
+    <link rel="stylesheet" href="style1.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <div id="app">
+        <header>
+            <h1>SM.Movies</h1>
+            <input type="text" id="search" placeholder="Search for a movie...">
+        </header>
+        <section>
+            <div class="slider">
+                <!-- الأفلام ستدرج هنا -->
+            </div>
+            <div class="movie-info-container">
+                <div class="movie-backdrop" id="movie-backdrop"></div>
+                <div class="movie-details" id="movie-details">
+                    <h2 id="movie-title"></h2>
+                    <span id="movie-rating"></span>
+                    <p id="movie-overview"></p>
+                    <button id="trailer-button" class="trailer-button">Watch Trailer</button>
+                </div>
+            </div>
+         </section>
+        <div class="content">
+       
+            <aside>
+                <h2>Categories</h2>
+                <ul id="categories">
+                    <li><a href="#" onclick="filterMovies('movie')">Movies</a></li>
+                    <li><a href="#" onclick="filterMovies('tv')">TV Shows</a></li>
+                    <li><a href="#" onclick="filterMovies('anime')">Anime</a></li>
+                </ul>
+                <h3>Genres</h3>
+                <ul id="genres">
+                    <!-- Genres will be loaded here dynamically -->
+                </ul>
+            </aside>
+            <div id="movie-modal" class="modal">
+                <div class="modal-content">
+                    <span class="close-button" onclick="closeModal()">&times;</span>
+                    <div class="modal-body">
+                        <img id="modal-poster" src="" alt="">
+                        <div class="modal-details">
+                            <h2 id="modal-title"></h2>
+                            <p id="modal-overview"></p>
+                            <button id="modal-trailer-button" class="trailer-button">Watch Trailer</button>
+                            <div id="modal-streaming-links"></div>
+                        </div>
+                    </div>
+                    <div id="related-movies"></div>
+                    <div id="cast-members"></div>
+                </div>
+            </div>
+
+            <main id="main">  
+            </main>
+        </div>
+    </div>
+    <footer class="footer">
+        <h1>SM.Movies</h1>
+        <p>SM.Movies is an organization dedicated to providing comprehensive and high-quality content about the world of cinema. Our goal is to offer information and reviews about both new and classic films, film critiques, interviews with industry professionals, and coverage of global film events.</p>
+        <p class="contact-info">
+            To contact me, you can email: <span id="email" onclick="copyToClipboard('email')">simo.elb.2005@gmail.com</span>
+        or call: <span id="phone" onclick="copyToClipboard('phone')">+212 643-895482</span>
+        </p>
+        <a href="https://www.facebook.com/profile.php?id=100067897039185" target="_blank"><i class='bx bxl-facebook'></i></a>
+        <a href="https://youtube.com/@digitalvortex203?si=JBZG6-LWo-xyU7vJ" target="_blank"><i class='bx bxl-youtube'></i></a>
+        <a href="https://www.instagram.com/simo_elb_3?igsh=MTVsYnlvZTlpaWVxdw==" target="_blank"><i class='bx bxl-instagram'></i></a>
+        <a href="https://whatsapp.com/channel/0029Va29keX11ulJKqdPts1n" target="_blank"><i class='bx bxl-whatsapp'></i></a>
+    
+    <div class="copyright">
+        &copy; 2024 SM.Movies. All Rights Reserved.
+    </div>
+</footer>
+<script>
+    function copyToClipboard(type) {
+        let text = '';
+        if (type === 'email') {
+            text = 'simo.elb.2005@gmail.com';
+        } else if (type === 'phone') {
+            text = '+212 643-895482';
+        }
+
+        navigator.clipboard.writeText(text)
+            .then(() => {
+                alert(`تم نسخ ${type} إلى الحافظة بنجاح!`);
+            })
+            .catch(err => {
+                console.error('حدث خطأ أثناء النسخ: ', err);
+            });
+    }
+</script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script src="script1.js"></script>
+</body>
+</html>
